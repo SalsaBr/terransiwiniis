@@ -1,0 +1,10 @@
+---
+- hosts: windows
+  tasks:
+    - name: Instala IIS
+      ansible.windows.win_feature:
+        name: Web-Server
+        state: present
+        restart: yes
+        include_sub_features: yes
+        include_sub_featuresclude_management_tools: yes
